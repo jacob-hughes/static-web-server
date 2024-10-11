@@ -38,7 +38,7 @@ doc = false
 
 [features]
 # All features enabled by default
-default = ["compression", "http2", "directory-listing", "basic-auth", "fallback-page"]
+default = ["compression", "directory-listing", "basic-auth", "fallback-page"]
 # Include all features (used when building SWS binaries)
 all = ["default", "experimental"]
 # HTTP2
@@ -75,7 +75,7 @@ globset = { version = "0.4", features = ["serde1"] }
 headers = "0.3"
 http = "0.2"
 http-serde = "1.1"
-hyper = { version = "0.14", features = ["stream", "http1", "http2", "tcp", "server"] }
+hyper = { git = "https://github.com/jacob-hughes/hyper", features = ["stream", "http1", "http2", "tcp", "server"] }
 lazy_static = "1.5"
 listenfd = "1.0"
 maud = { version = "0.26", optional = true }

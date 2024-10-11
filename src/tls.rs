@@ -17,7 +17,7 @@ use std::io::{self, BufReader, Cursor, Read};
 use std::net::SocketAddr;
 use std::path::{Path, PathBuf};
 use std::pin::Pin;
-use std::sync::Arc;
+use std::gc::Gc as Arc;
 use std::task::{Context, Poll};
 use tokio::io::{AsyncRead, AsyncWrite, ReadBuf};
 use tokio_rustls::rustls::{pki_types::PrivateKeyDer, Error as TlsError, ServerConfig};

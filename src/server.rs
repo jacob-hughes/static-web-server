@@ -9,7 +9,8 @@
 use hyper::server::Server as HyperServer;
 use listenfd::ListenFd;
 use std::net::{IpAddr, SocketAddr, TcpListener};
-use std::sync::Arc;
+use std::gc::Gc as Arc;
+// use std::gc::Gc as Arc as ActualArc;
 use tokio::sync::{watch::Receiver, Mutex};
 
 use crate::handler::{RequestHandler, RequestHandlerOpts};
@@ -348,7 +349,7 @@ impl Server {
 
         // Create a service router for Hyper
         let router_service = RouterService::new(RequestHandler {
-            opts: Arc::from(handler_opts),
+            opts: Arc::new(handler_opts),
         });
 
         #[cfg(windows)]

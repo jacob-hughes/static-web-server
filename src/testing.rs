@@ -9,7 +9,7 @@
 /// SWS fixtures module.
 #[doc(hidden)]
 pub mod fixtures {
-    use std::{path::PathBuf, sync::Arc};
+    use std::{path::PathBuf, gc::Gc as Arc};
 
     use crate::{
         handler::{RequestHandler, RequestHandlerOpts},
@@ -110,7 +110,7 @@ pub mod fixtures {
         };
 
         RequestHandler {
-            opts: Arc::from(req_handler_opts),
+            opts: Arc::new(req_handler_opts),
         }
     }
 }

@@ -11,7 +11,7 @@ use std::convert::Infallible;
 use std::future::{ready, Future, Ready};
 use std::net::SocketAddr;
 use std::pin::Pin;
-use std::sync::Arc;
+use std::gc::Gc as Arc;
 use std::task::{Context, Poll};
 
 use crate::{handler::RequestHandler, transport::Transport, Error};

@@ -6,7 +6,7 @@
 //! The module provides signals support like `SIGTERM`, `SIGINT` and `SIGQUIT`.
 //!
 
-use std::sync::Arc;
+use std::gc::Gc as Arc;
 use tokio::sync::{watch::Receiver, Mutex};
 use tokio::time::{sleep, Duration};
 

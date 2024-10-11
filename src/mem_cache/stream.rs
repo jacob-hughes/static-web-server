@@ -2,7 +2,7 @@ use bytes::{BufMut, Bytes, BytesMut};
 use futures_util::Stream;
 use std::io::Read;
 use std::pin::Pin;
-use std::sync::Arc;
+use std::gc::Gc as Arc;
 use std::task::{Context, Poll};
 
 use crate::mem_cache::cache::{MemFile, MemFileTempOpts, CACHE_STORE};

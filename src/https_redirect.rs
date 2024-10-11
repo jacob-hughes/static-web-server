@@ -8,7 +8,7 @@
 
 use headers::{HeaderMapExt, Host};
 use hyper::{header::LOCATION, Body, Request, Response, StatusCode};
-use std::sync::Arc;
+use std::gc::Gc as Arc;
 
 use crate::Result;
 

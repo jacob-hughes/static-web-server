@@ -101,6 +101,12 @@
 #![deny(dead_code)]
 #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
+#![feature(gc)]
+
+use std::gc::GcAllocator;
+#[global_allocator]
+static A: GcAllocator = GcAllocator;
+
 // Extern crates
 #[macro_use]
 extern crate anyhow;

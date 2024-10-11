@@ -7,7 +7,8 @@
 //!
 
 use hyper::{Body, Request, Response, StatusCode};
-use std::{future::Future, net::SocketAddr, path::PathBuf, sync::Arc};
+use std::{future::Future, net::SocketAddr, path::PathBuf};
+use std::gc::Gc;
 
 #[cfg(any(
     feature = "compression",
@@ -169,7 +170,7 @@ impl Default for RequestHandlerOpts {
 /// It defines the main request handler used by the Hyper service request.
 pub struct RequestHandler {
     /// Request handler options.
-    pub opts: Arc<RequestHandlerOpts>,
+    pub opts: Gc<RequestHandlerOpts>,
 }
 
 impl RequestHandler {
